@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="jp.co.asial.checkapp"
+  version="0.0.1">
+
+    <name>CheckAppPlugin</name>
+    <description>CheckAppPlugin Description</description>
+    <author>Asial Corporation</author>
+    <license>Apache 2.0 License</license>
+    <engines>
+        <engine name="cordova" version=">=3.5.0" />
+    </engines>
+    <js-module src="www/check_app.js" name="checkapp">
+        <clobbers target="CheckApp" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CheckAppPlugin"> 
+                <param name="android-package" value="get.CheckAppPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/get/CheckAppPlugin.java" target-dir="src/get" />        
+    </platform>
+
+</plugin>
